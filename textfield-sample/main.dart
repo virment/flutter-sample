@@ -53,7 +53,8 @@ class _MyCustomFormState extends State<MyCustomForm> {
       appBar: AppBar(
         title: Text('Text Input Sample'),
       ),
-      body: Column(
+      body: Container (
+         child: Column(
           // mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Padding(
@@ -62,7 +63,8 @@ class _MyCustomFormState extends State<MyCustomForm> {
                 controller: myController,
               ),
             ),
-            ListView.builder(
+            Expanded(
+              child:ListView.builder(
               scrollDirection: Axis.vertical,
               shrinkWrap: true,
               itemCount: items.length,
@@ -76,8 +78,9 @@ class _MyCustomFormState extends State<MyCustomForm> {
                 ),
               );
             }),
+            ),
           ]),
-
+        ),
         // テキストフィールド送信用ボタン
         floatingActionButton: FloatingActionButton(
         // onPressedでボタンが押された時の動作を渡す
